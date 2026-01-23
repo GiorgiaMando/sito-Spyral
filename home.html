@@ -1,50 +1,72 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Spyral</title>
-  <link rel="stylesheet" href="homeStyle.css">
-
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Spyral</title>
+    <link rel="stylesheet" href="homeStyle.css" />
+  </head>
+  <body>
     <header class="spyral">
-        <div class="logocontainer">
-            <img src="logomobile.png" alt="logo del festival" class="logomobile">
-        </div>
-        <div class="logocontainer2">
-            <img src="logoweb.png" alt="logo del festival" class="logoweb">
-        </div>
+      <div class="logocontainer">
+        <img src="logomobile.png" alt="logo del festival" class="logomobile" />
+      </div>
+      <div class="logocontainer2">
+        <img src="logoweb.png" alt="logo del festival" class="logoweb" />
+      </div>
     </header>
 
     <section class="videosection">
-        <div class="videocontainer">
-            <video class="video" video controls autoplay muted loop>
-                <source src="video.mp4" type="video/mp4">
-            </video>
-        </div>
+      <div class="videocontainer">
+        <video class="video" video controls autoplay muted loop>
+          <source src="video.mp4" type="video/mp4" />
+        </video>
+      </div>
     </section>
 
     <main>
-    <div class="menu">
+      <div class="menu">
         <div class="menu-item">
-        <button class="menu-btn" data-target="about"><p>About us</p><span>➺</span></button>
-        <div class="content" id="about">
-            <p>Spyral Fest, ideato e organizzato da Softlips APS, è un festival underground e site-specific di musica elettronica che valorizza giovani talenti, rigenera spazi storici e promuove comunità e territorio. </p>
-        </div>
+          <button class="menu-btn" data-target="about">
+            <p>About us</p>
+            <span>➺</span>
+          </button>
+          <div class="content" id="about">
+            <p>
+              Spyral Fest, ideato e organizzato da Softlips APS, è un festival
+              underground e site-specific di musica elettronica che valorizza
+              giovani talenti, rigenera spazi storici e promuove comunità e
+              territorio.
+            </p>
+          </div>
         </div>
 
         <div class="menu-item">
-        <button class="menu-btn" data-target="location"><p>Location</p><span>➛</span></button>
-        <div class="content" id="location">
-            <p>Il festival si svolge nel borgo disabitato di Roca Nuova, a Torre dell’Orso (LE). Un piccolo insediamento storico con castelletto, abitazioni e frantoio, testimone del Salento cinquecentesco. </p>
-        </div>
+          <button class="menu-btn" data-target="location">
+            <p>Location</p>
+            <span>➛</span>
+          </button>
+          <div class="content" id="location">
+            <p>
+              Il festival si svolge nel borgo disabitato di Roca Nuova, a Torre
+              dell’Orso (LE). Un piccolo insediamento storico con castelletto,
+              abitazioni e frantoio, testimone del Salento cinquecentesco.
+            </p>
+          </div>
         </div>
 
         <div class="menu-item">
-        <button class="menu-btn" data-target="contatti"><p>Contatti</p><span>➙</span></button>
-        <div class="content" id="contatti">
-            <p>Per collaborazioni, partnership o candidature artistiche, contatta Softlips APS via softlips.comitato@gmail.com. L’associazione lavora con enti locali, artisti e collettivi per valorizzare musica elettronica e il territorio. / form </p>
+          <button class="menu-btn" data-target="contatti">
+            <p>Contatti</p>
+            <span>➙</span>
+          </button>
+          <div class="content" id="contatti">
+            <p>
+              Per collaborazioni, partnership o candidature artistiche, contatta
+              Softlips APS via softlips.comitato@gmail.com. L’associazione
+              lavora con enti locali, artisti e collettivi per valorizzare
+              musica elettronica e il territorio. / form
+            </p>
 
             <form 
             class="contact-form"
@@ -60,41 +82,36 @@
             </form>
 
         </div>
-        </div>
-    </div>
+      </div>
     </main>
 
-    <footer>
-        Softlips aps - 2025
-    </footer>
+    <footer>Softlips aps - 2025</footer>
 
     <script>
-        const buttons = document.querySelectorAll('.menu-btn');
-        const menuItems = document.querySelectorAll('.menu-item');
+      const buttons = document.querySelectorAll(".menu-btn");
+      const menuItems = document.querySelectorAll(".menu-item");
 
-        let activeIndex = null;
+      let activeIndex = null;
 
-    buttons.forEach((btn, index) => {
-        btn.addEventListener('click', () => {
-            const menuItem = menuItems[index];
+      buttons.forEach((btn, index) => {
+        btn.addEventListener("click", () => {
+          const menuItem = menuItems[index];
 
-        if (activeIndex === index) {
-            menuItem.classList.remove('active');
-            btn.classList.remove('active');
+          if (activeIndex === index) {
+            menuItem.classList.remove("active");
+            btn.classList.remove("active");
             activeIndex = null;
             return;
-        }
+          }
 
-        menuItems.forEach(item => item.classList.remove('active'));
-        buttons.forEach(button => button.classList.remove('active'));
+          menuItems.forEach((item) => item.classList.remove("active"));
+          buttons.forEach((button) => button.classList.remove("active"));
 
-        menuItem.classList.add('active');
-        btn.classList.add('active');
-        activeIndex = index;
-    });
-});
-
+          menuItem.classList.add("active");
+          btn.classList.add("active");
+          activeIndex = index;
+        });
+      });
     </script>
-
-</body>
+  </body>
 </html>
