@@ -116,12 +116,12 @@ p {
     font-size: 32px;
 }
 
-    .menu {
-        flex-direction: row;
-        width: 100%;
-        justify-content: stretch;
-        align-items: stretch;
-    }
+.menu {
+    flex-direction: row;
+    /*width: 100%;*/
+    justify-content: stretch;
+    align-items: stretch;
+}
 
 .menu-item {
     position: relative;
@@ -169,7 +169,7 @@ p {
     flex: 1;
     justify-content: space-between;
     align-items: center;
-    background-color: black;
+    background-color: rgb(72, 40, 40);
     color: white;
     font-family: 'Helvetica Black';
     font-size: 33px;
@@ -215,11 +215,8 @@ p {
     width: 100%;
     position: relative;
     z-index: 10;
-
-    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1) 0.3s,
-                z-index 0s linear 0.9s,
-                width 0s linear 0.9s,
-                flex 0s linear 0.9s;
+    min-width: 0;
+    
 }
 
 .menu-item.active {
@@ -229,9 +226,7 @@ p {
     width: 100%;
     z-index: 999;
     transform: translateY(-60vh);
-    transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0s,
-                width 0.3s ease 0s,
-                z-index 0s linear 0s;
+    transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0s;
 }
 
 .content {
@@ -249,12 +244,12 @@ p {
     visibility: hidden;
     padding: 0 10px;
 
-    /* CHIUSURA */
+    /* Animazioni chiusura */
     transition: 
-        opacity 0.2s ease 0s,
-        height 0.3s ease 0s,
-        padding 0.3s ease 0s,
-        visibility 0s linear 0.3s;
+        height 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+        opacity 0.4s ease,
+        padding 0.3s ease,
+        visibility 0s linear 0.5s; /* delay coincide con height */
 }
 
 .menu-item.active .content {
@@ -263,12 +258,13 @@ p {
     visibility: visible;
     padding: 20px 10px;
 
-    /* APERTURA */
+     /* Animazioni apertura */
     transition: 
-        height 0.5s cubic-bezier(0.22, 1, 0.36, 1) 0.3s,
-        opacity 0.4s ease 0.4s,
-        padding 0.5s ease 0.3s,
+        height 0.5s cubic-bezier(0.22, 1, 0.36, 1) 0s,
+        opacity 0.4s ease 0.1s,
+        padding 0.5s ease 0s,
         visibility 0s linear 0s;
+    
 }
 
 .content-section {
@@ -303,7 +299,6 @@ p {
     color: white !important;
     background-color: black !important;
 }
-
 
 footer {
     color: white;
