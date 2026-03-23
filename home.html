@@ -1,117 +1,168 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Spyral</title>
-    <link rel="stylesheet" href="homeStyle.css" />
-  </head>
-  <body>
-    <header class="spyral">
-      <div class="logocontainer">
-        <img src="logomobile.png" alt="logo del festival" class="logomobile" />
-      </div>
-      <div class="logocontainer2">
-        <img src="logoweb.png" alt="logo del festival" class="logoweb" />
-      </div>
-    </header>
 
-    <section class="videosection">
-      <div class="videocontainer">
-        <video class="video" video controls autoplay muted loop>
-          <source src="video.mp4" type="video/mp4" />
-        </video>
-      </div>
-    </section>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spyral</title>
+  <link rel="stylesheet" href="homeStyle.css?v=11">
 
-    <main>
-      <div class="menu">
-        <div class="menu-item">
-          <button class="menu-btn" data-target="about">
-            <p>About us</p>
-            <span>➺</span>
-          </button>
-          <div class="content" id="about">
-            <p>
-              Spyral Fest, ideato e organizzato da Softlips APS, è un festival
-              underground e site-specific di musica elettronica che valorizza
-              giovani talenti, rigenera spazi storici e promuove comunità e
-              territorio.
-            </p>
-          </div>
-        </div>
+</head>
 
-        <div class="menu-item">
-          <button class="menu-btn" data-target="location">
-            <p>Location</p>
-            <span>➛</span>
-          </button>
-          <div class="content" id="location">
-            <p>
-              Il festival si svolge nel borgo disabitato di Roca Nuova, a Torre
-              dell’Orso (LE). Un piccolo insediamento storico con castelletto,
-              abitazioni e frantoio, testimone del Salento cinquecentesco.
-            </p>
-          </div>
-        </div>
+<body>
+  <header class="spyral">
+    <div class="logocontainer">
+      <img src="logomobile.png" alt="logo del festival" class="logomobile">
+    </div>
+    <div class="logocontainer2">
+      <img src="logoweb.png" alt="logo del festival" class="logoweb">
+    </div>
+  </header>
 
-        <div class="menu-item">
-          <button class="menu-btn" data-target="contatti">
-            <p>Contatti</p>
-            <span>➙</span>
-          </button>
-          <div class="content" id="contatti">
-            <p>
-              Per collaborazioni, partnership o candidature artistiche, contatta
-              Softlips APS via softlips.comitato@gmail.com. L’associazione
-              lavora con enti locali, artisti e collettivi per valorizzare
-              musica elettronica e il territorio. / form
-            </p>
+  <section class="videosection">
+    <div class="videocontainer">
+      <video class="video" controls autoplay muted loop playsinline>
+        <source src="video.mp4" type="video/mp4">
+      </video>
+    </div>
+  </section>
 
-            <form 
-            class="contact-form"
-            action="https://formspree.io/f/xkojrapa"
-            method="POST">
-                <input type="text" name="name" placeholder="Nome" required>
-                <input type="text" name="surname" placeholder="Cognome" required>
-                <input type="email" name="email" placeholder="Email" required>
-              
-                <button type="submit">Invia</button>
-               
-                <p class="form-message"></p>
-            </form>
-
+  <main>
+    <div class="menu">
+      <div class="menu-item">
+        <button class="menu-btn" data-target="about">
+          <p>About us</p>
+          <span class="menu-arrow"></span>
+        </button>
+        <div class="content" id="about">
+          <p>Spyral Fest è un festival underground e site specific di musica elettronica che unisce sperimentazione
+            sonora, arti visive e performance, valorizzando giovani talenti, rigenerando spazi storici e creando
+            connessioni tra comunità, territorio e cultura contemporanea.</p>
         </div>
       </div>
-    </main>
 
-    <footer>Softlips aps - 2025</footer>
+      <div class="menu-item">
+        <button class="menu-btn" data-target="location">
+          <p>Location</p>
+          <span class="menu-arrow"></span>
+        </button>
+        <div class="content" id="location">
+          <p>Il festival si svolge nel borgo disabitato di Roca Nuova, a Torre dell'Orso (LE), un piccolo insediamento
+            storico composto da un castelletto, antiche abitazioni e un frantoio, preziosa testimonianza del Salento
+            cinquecentesco.</p>
+          <video class="location-video" controls autoplay muted loop playsinline>
+            <source src="torre.MP4" type="video/mp4">
+          </video>
+        </div>
+      </div>
 
-    <script>
-      const buttons = document.querySelectorAll(".menu-btn");
-      const menuItems = document.querySelectorAll(".menu-item");
+      <div class="menu-item">
+        <button class="menu-btn" data-target="contatti">
+          <p>Contatti</p>
+          <span class="menu-arrow"></span>
+        </button>
+        <div class="content" id="contatti">
+          <p>Per collaborazioni, partnership o candidature artistiche, scrivici a
+            <strong>softlips.comitato@gmail.com</strong>. Lavoriamo con enti locali, artisti e collettivi per promuovere
+            la musica elettronica e il territorio.</p>
 
-      let activeIndex = null;
+          <form class="contact-form" action="https://formspree.io/f/xkojrapa" method="POST" style="display: none;">
+            <input type="text" name="name" placeholder="Nome" required>
+            <input type="text" name="surname" placeholder="Cognome" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <button type="submit">Invia</button>
+            <p class="form-message"></p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </main>
 
-      buttons.forEach((btn, index) => {
-        btn.addEventListener("click", () => {
-          const menuItem = menuItems[index];
+  <footer>
+    Softlips aps - 2025
+  </footer>
 
-          if (activeIndex === index) {
-            menuItem.classList.remove("active");
-            btn.classList.remove("active");
-            activeIndex = null;
-            return;
-          }
+  <script>
+    // Forza l'esecuzione del video principale aggirando i blocchi del browser su Safari/dispositivi rigidi
+    document.addEventListener('DOMContentLoaded', () => {
+      const mainVideo = document.querySelector('.videosection video');
+      if (mainVideo) {
+        mainVideo.muted = true;
+        mainVideo.play().catch(e => console.log('Autoplay fallito:', e));
+      }
+    });
 
-          menuItems.forEach((item) => item.classList.remove("active"));
-          buttons.forEach((button) => button.classList.remove("active"));
+    const buttons = document.querySelectorAll('.menu-btn');
+    const menuItems = document.querySelectorAll('.menu-item');
 
-          menuItem.classList.add("active");
-          btn.classList.add("active");
-          activeIndex = index;
+    let activeIndex = null;
+
+    buttons.forEach((btn, index) => {
+      btn.addEventListener('click', () => {
+        // Ripristina l'hover non appena si fa un nuovo click per sicurezza
+        btn.classList.remove('disable-hover');
+
+        const menuItem = menuItems[index];
+
+        if (activeIndex === index) {
+          menuItem.classList.remove("active");
+          btn.classList.remove("active");
+          menuItem.style.transform = '';
+          activeIndex = null;
+
+          menuItem.classList.add("closing");
+          setTimeout(() => menuItem.classList.remove("closing"), 450);
+
+          // Ferma il video se presente nella scheda che si sta chiudendo
+          const videoToPause = menuItem.querySelector('video');
+          if (videoToPause) videoToPause.pause();
+
+          // Forza il colore bianco fino a quando il mouse non viene mosso via dal pulsante
+          btn.classList.add('disable-hover');
+          const removeHover = () => {
+            btn.classList.remove('disable-hover');
+            btn.removeEventListener('mouseleave', removeHover);
+          };
+          btn.addEventListener('mouseleave', removeHover);
+
+          return;
+        }
+
+        if (activeIndex !== null) {
+          const prevItem = menuItems[activeIndex];
+          prevItem.classList.add("closing");
+          setTimeout(() => prevItem.classList.remove("closing"), 450);
+          
+          // Ferma il video della vecchia scheda
+          const prevVideo = prevItem.querySelector('video');
+          if (prevVideo) prevVideo.pause();
+        }
+
+        menuItems.forEach(item => {
+          item.classList.remove('active');
+          item.style.transform = '';
         });
+        buttons.forEach(button => button.classList.remove('active'));
+
+        // Calculate offset to perfectly land exactly under the logo
+        const offset = menuItem.offsetTop;
+        menuItem.style.transform = `translateY(calc(-60vh - ${offset}px))`;
+
+        menuItem.classList.add('active');
+        btn.classList.add('active');
+        activeIndex = index;
+
+        // Fai ripartire il video da zero nella nuova scheda
+        const currentVideo = menuItem.querySelector('video');
+        if (currentVideo) {
+            currentVideo.currentTime = 0;
+            currentVideo.play();
+        }
       });
-    </script>
-  </body>
+    });
+
+  </script>
+
+</body>
+
 </html>
