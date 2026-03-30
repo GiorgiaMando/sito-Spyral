@@ -136,6 +136,7 @@
           menuItem.classList.remove("active");
           btn.classList.remove("active");
           menuItem.style.transform = '';
+          menuItem.querySelector('.content').style.height = '';
           activeIndex = null;
 
           menuItem.classList.add("closing");
@@ -169,16 +170,21 @@
         menuItems.forEach(item => {
           item.classList.remove('active');
           item.style.transform = '';
+          item.querySelector('.content').style.height = '';
         });
         buttons.forEach(button => button.classList.remove('active'));
 
         // Calculate offset to perfectly land exactly under the logo
         const offset = menuItem.offsetTop;
-        menuItem.style.transform = `translateY(calc(-60vh - ${offset}px))`;
+        const videoH = document.querySelector('.videosection').offsetHeight;
+        menuItem.style.transform = `translateY(calc(-${videoH}px - ${offset}px))`;
 
         menuItem.classList.add('active');
         btn.classList.add('active');
         activeIndex = index;
+        
+        const btnH = btn.offsetHeight;
+        menuItem.querySelector('.content').style.height = `${videoH - btnH}px`;
 
         // Fai ripartire il video da zero nella nuova scheda
         const currentVideo = menuItem.querySelector('video');
