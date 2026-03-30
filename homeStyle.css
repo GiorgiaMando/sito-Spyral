@@ -73,6 +73,24 @@ main {
 .spyral {
     width: 100%;
     padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.ticket-link {
+    font-family: 'Helvetica Bold';
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    transition: color 0s;
+}
+
+@media (hover: hover) {
+    .ticket-link:hover {
+        color: rgb(232, 49, 134);
+        transition: color 0.2s ease-out;
+    }
 }
 
 .logocontainer {
@@ -82,8 +100,8 @@ main {
 }
 
 .logomobile {
-    width: 150px;
-    max-width: 60%;
+    width: 200px;
+    max-width: 75%;
     height: auto;
 }
 
@@ -172,6 +190,10 @@ main {
 
 @media (min-width: 768px) {
 
+    .ticket-link {
+        font-size: 24px;
+    }
+
     p {
         text-transform: uppercase;
         font-size: 32px;
@@ -254,8 +276,8 @@ main {
     }
 
     .logoweb {
-        width: 170px;
-        max-width: 60%;
+        width: 220px;
+        max-width: 70%;
         height: auto;
     }
 
@@ -513,13 +535,105 @@ main {
     display: block;
 }
 
+#contatti a {
+    color: inherit;
+    text-decoration: underline;
+}
+
+#contatti a:hover {
+    color: rgb(232, 49, 134);
+}
+
 footer {
     font-family: 'Helvetica Light';
     color: white;
     font-size: 10px;
     margin-top: 12px;
-    text-align: center;
     padding-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-row-gap: 5px;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.footer-left-col {
+    grid-column: 1;
+    grid-row: 1;
+    justify-self: start;
+    text-align: left;
+}
+
+.footer-center {
+    display: flex;
+    gap: 15px;
+    grid-column: 2;
+    grid-row: 1 / span 2;
+    justify-self: end;
+}
+
+.footer-right-col {
+    grid-column: 1;
+    grid-row: 2;
+    justify-self: start;
+}
+
+@media (min-width: 768px) {
+    .footer-content {
+        grid-template-columns: 1fr auto 1fr;
+        grid-row-gap: 0;
+    }
+    .footer-left-col {
+        grid-column: 1;
+        grid-row: 1;
+        justify-self: start;
+    }
+    .footer-center {
+        grid-column: 2;
+        grid-row: 1;
+        justify-self: center;
+    }
+    .footer-right-col {
+        grid-column: 3;
+        grid-row: 1;
+        justify-self: end;
+    }
+}
+
+.footer-left {
+    text-align: left;
+}
+
+.social-icon {
+    color: white;
+    transition: color 0.3s ease;
+}
+
+.social-icon:hover {
+    color: rgb(232, 49, 134);
+}
+
+.social-icon svg {
+    width: 20px;
+    height: 20px;
+}
+
+.powered-by {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 8px;
+    text-align: left;
+}
+
+@media (min-width: 768px) {
+    .powered-by {
+        text-align: right;
+    }
 }
 
 .menu-btn {

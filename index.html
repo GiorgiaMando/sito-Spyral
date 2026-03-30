@@ -5,7 +5,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Spyral Fest</title>
-  <meta name="description" content="Spyral Fest è un festival underground e site-specific di musica elettronica, arti visive e performance nel borgo disabitato di Roca Nuova (Torre dell'Orso), Salento.">
+  <meta name="description"
+    content="Spyral Fest è un festival underground di musica elettronica site-specific che unisce sperimentazione sonora, arti visive e performance.">
   <link rel="stylesheet" href="homeStyle.css?v=11">
 </head>
 
@@ -17,6 +18,8 @@
     <div class="logocontainer2">
       <img src="logoweb.png" alt="logo del festival" class="logoweb">
     </div>
+    <a href="https://dice.fm/event/oev9p5-spyral-fest-2026-9th-aug-borgo-rinascimentale-di-roca-nuova-melendugno-tickets"
+      class="ticket-link" target="_blank" rel="noopener noreferrer">TICKETS</a>
   </header>
 
   <section class="videosection">
@@ -63,8 +66,10 @@
         </button>
         <div class="content" id="contatti">
           <p>Per collaborazioni, partnership o candidature artistiche, scrivici a
-            <strong>softlips.comitato@gmail.com</strong>. Lavoriamo con enti locali, artisti e collettivi per promuovere
-            la musica elettronica e il territorio.</p>
+            <strong><a href="mailto:softlips.comitato@gmail.com">softlips.comitato@gmail.com</a></strong>. Lavoriamo con
+            enti locali, artisti e collettivi per promuovere
+            la musica elettronica e il territorio.
+          </p>
 
           <form class="contact-form" action="https://formspree.io/f/xkojrapa" method="POST" style="display: none;">
             <input type="text" name="name" placeholder="Nome" required>
@@ -79,7 +84,30 @@
   </main>
 
   <footer>
-    Softlips aps - 2025
+    <div class="footer-content">
+      <div class="footer-left-col">
+        <div class="footer-left">Softlips aps - 2026</div>
+      </div>
+      <div class="footer-center">
+        <a href="https://www.instagram.com/spyral.fest/" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+            stroke-linejoin="round">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+          </svg>
+        </a>
+        <a href="https://www.tiktok.com/@spyral.fest?is_from_webapp=1&sender_device=pc" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="TikTok">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+            stroke-linejoin="round">
+            <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"></path>
+          </svg>
+        </a>
+      </div>
+      <div class="footer-right-col">
+        <div class="powered-by">A project by Giorgia Mandorino</div>
+      </div>
+    </div>
   </footer>
 
   <script>
@@ -132,7 +160,7 @@
           const prevItem = menuItems[activeIndex];
           prevItem.classList.add("closing");
           setTimeout(() => prevItem.classList.remove("closing"), 450);
-          
+
           // Ferma il video della vecchia scheda
           const prevVideo = prevItem.querySelector('video');
           if (prevVideo) prevVideo.pause();
@@ -155,8 +183,8 @@
         // Fai ripartire il video da zero nella nuova scheda
         const currentVideo = menuItem.querySelector('video');
         if (currentVideo) {
-            currentVideo.currentTime = 0;
-            currentVideo.play();
+          currentVideo.currentTime = 0;
+          currentVideo.play();
         }
       });
     });
